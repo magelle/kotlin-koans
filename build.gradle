@@ -2,7 +2,13 @@ buildscript {
     ext.kotlin_version = '1.0.5'
 
     repositories {
-        mavenCentral()
+        maven {
+            url "${nexusUrl}/content/groups/public"
+            credentials {
+                username "${nexusUsername}"
+                password "${nexusPassword}"
+            }
+        }
     }
 
     dependencies {
@@ -18,7 +24,13 @@ sourceSets {
 }
 
 repositories {
-    mavenCentral()
+    maven {
+        url "${nexusUrl}/content/groups/public"
+        credentials {
+            username "${nexusUsername}"
+            password "${nexusPassword}"
+        }
+    }
 }
 
 dependencies {
