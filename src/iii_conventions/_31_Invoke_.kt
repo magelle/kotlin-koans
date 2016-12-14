@@ -14,6 +14,11 @@ fun todoTask31(): Nothing = TODO(
     references = { invokable: Invokable -> })
 
 fun task31(invokable: Invokable): Int {
-    todoTask31()
-//    return invokable()()()().getNumberOfInvocations()
+//    todoTask31()
+    return invokable()()()().getNumberOfInvocations()
 }
+
+var count: Int = 0
+
+operator fun Invokable.invoke(): Nothing = count ++ as Nothing
+fun Invokable.getNumberOfInvocations(): Int = count

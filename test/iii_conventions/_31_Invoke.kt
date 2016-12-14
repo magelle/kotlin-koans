@@ -20,6 +20,8 @@ class _31_Invoke {
         testInvokable(0) { it }
     }
 
-    operator fun Invokable.invoke(): Nothing = todoTask31()
-    fun Invokable.getNumberOfInvocations(): Nothing = todoTask31()
+    var count: Int = 0
+
+    operator fun Invokable.invoke(): Nothing = this@_31_Invoke.count ++ as Nothing
+    fun Invokable.getNumberOfInvocations(): Int = this@_31_Invoke.count
 }
